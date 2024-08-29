@@ -57,24 +57,25 @@ export default {
             this.temperatureF = null;
             this.temperatureK = null;
 
-            if (!this.searchText) {
+            if (!this.searchText.trim()) {
                 toast.error("You must enter a city name first", {
                             autoClose: 3000,
                 });
 
+                this.searchText = null;
                 return;
             }
-
+            
             this.loading = true;
 
-            axios.get(`https://localhost:7201/api/weather/get/${this.searchText}`)
+            axios.get(`https://localhost:7201/api/weather/get/${this.searchText.trim()}`)
                 .then(response => {
                     if (response.data.success) {
                         this.temperatureC = response.data.temperatures.temperatureC;
                         this.temperatureF = response.data.temperatures.temperatureF;
                         this.temperatureK = response.data.temperatures.temperatureK;
 
-                        sessionStorage.setItem('last-city', this.searchText);
+                        sessionStorage.setItem('last-city', this.searchText.trim());
                     }
                     else {
                         toast.error(response.data.errorMessage, {
