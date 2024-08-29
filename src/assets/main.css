@@ -1,0 +1,140 @@
+@import './base.css';
+
+#app {
+    height: 100vh;
+}
+
+.weather-main {
+    height: 100%;
+    background-image: url("/src/assets/icons/weather-background.avif");
+    padding: 5em 0 2em;
+}
+
+.app-section {
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
+    min-height: 500px;
+    padding: 3em;
+}
+
+.welcome-text {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 1em;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    color: #08AAE1;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    height: 50px;
+    width: 500px;
+    border-radius: 2em 0 0 2em;
+    border: 2px solid #08AAE1;
+    color: #08AAE1;
+    padding: 0 1.5em;
+    border-right: none;
+    font-size: 22px;
+}
+
+.search-input:focus {
+    outline: 0;
+}
+
+.search-button {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border: 2px solid #08AAE1;
+    border-radius: 0 2em 2em 0;
+    border-left: none;
+    padding: 0.75em;
+}
+
+.loading-section {
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+}
+
+.loading-section>img {
+    max-width: 400px;
+}
+
+.weather-section {
+    max-width: 500px;
+    margin: auto;
+}
+
+.temperature-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.temperature-display {
+    font-size: 24px;
+    font-weight: bold;
+    border: 1px solid #08AAE1;
+    width: max-content;
+    border-radius: 10px;
+    padding: 0.1em 0.5em;
+    color: #08AAE1;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateY(1px) }
+    10% { transform: translateY(-1px) }
+    20% { transform: translateY(-3px) }
+    30% { transform: translateY(3px) }
+    40% { transform: translateY(1px) }
+    50% { transform: translateY(-1px) }
+    60% { transform: translateY(-3px) }
+    70% { transform: translateY(3px) }
+    80% { transform: translateY(-1px) }
+    90% { transform: translateY(1px)}
+    100% { transform: translateY(1px) }
+  }
+
+@media only screen and (max-width: 630px) {
+    .weather-main {
+        padding-top: 1em;
+    }
+
+    .app-section {
+        margin: auto 1em;
+        padding: 2em 1em;
+    }
+
+    .search-wrapper {
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .temperature-wrapper {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
